@@ -1,0 +1,115 @@
+<section class="contact-section">
+  <div class="contact-card">
+    <h1 class="contact-title">Contact Us</h1>
+
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
+
+      <div class="form-row">
+        <label>Name</label>
+        <input type="text" formControlName="name" [class.invalid]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" />
+        <small class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')">Name is required</small>
+      </div>
+
+      <div class="form-row">
+        <label>Company Name</label>
+        <input type="text" formControlName="companyName" [class.invalid]="contactForm.get('companyName')?.touched && contactForm.get('companyName')?.invalid" />
+        <small class="error" *ngIf="contactForm.get('companyName')?.touched && contactForm.get('companyName')?.hasError('required')">Company name is required</small>
+      </div>
+
+      <div class="form-row">
+        <label>Contact Number</label>
+        <input type="tel" formControlName="contactNumber" placeholder="10 digit number" [class.invalid]="contactForm.get('contactNumber')?.touched && contactForm.get('contactNumber')?.invalid" />
+        <small class="error" *ngIf="contactForm.get('contactNumber')?.touched">
+          <span *ngIf="contactForm.get('contactNumber')?.hasError('required')">Contact number is required</span>
+          <span *ngIf="contactForm.get('contactNumber')?.hasError('pattern')">Enter a valid 10-digit number</span>
+        </small>
+      </div>
+
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" formControlName="email" [class.invalid]="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" />
+        <small class="error" *ngIf="contactForm.get('email')?.touched">
+          <span *ngIf="contactForm.get('email')?.hasError('required')">Email is required</span>
+          <span *ngIf="contactForm.get('email')?.hasError('email')">Enter a valid email</span>
+        </small>
+      </div>
+
+      <div class="form-row">
+        <label>Product Requirement</label>
+        <textarea formControlName="requirement" rows="4" [class.invalid]="contactForm.get('requirement')?.touched && contactForm.get('requirement')?.invalid"></textarea>
+        <small class="error" *ngIf="contactForm.get('requirement')?.touched && contactForm.get('requirement')?.hasError('required')">Requirement is required</small>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="contactForm.invalid" class="submit-btn">Send Enquiry</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- Contact Information -->
+<div class="w-full bg-gradient-to-r bg-slate-900/95 shadow-xl px-8 py-2 ">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
+
+        <!-- Phone -->
+        <div class="flex items-center gap-5 px-6 py-4">
+
+            <div
+                class="w-16 h-16 rounded-full border border-yellow-400 flex items-center justify-center text-yellow-400 text-3xl">
+                📞
+            </div>
+
+            <div>
+                <h4 class="text-white text-xl font-semibold">Call Us</h4>
+                <p class="text-blue-100 text-lg mt-1">
+                    +91 7058492729
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-center gap-5 px-6 py-4">
+
+            <div
+                class="w-16 h-16 rounded-full border border-yellow-400 flex items-center justify-center text-yellow-400 text-3xl">
+                ✉️
+            </div>
+
+            <div>
+                <h4 class="text-white text-xl font-semibold">Email</h4>
+                <p class="text-blue-100 text-lg mt-1 break-all">
+                    sales@morvexindia.com
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Address -->
+        <div class="flex items-center gap-5 px-6 py-4">
+
+            <div
+                class="w-16 h-16 rounded-full border border-yellow-400 flex items-center justify-center text-yellow-400 text-3xl">
+                📍
+            </div>
+
+            <div>
+                <h4 class="text-white text-xl font-semibold">
+                    Corporate Office
+                </h4>
+
+                <p class="text-blue-100 leading-7 mt-1">
+                    MORVEX Industrial Solutions Pvt. Ltd.<br>
+                    SRno.106, Hadapsar Inustrial Estate<br>
+                    Pune, Maharashtra, India
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

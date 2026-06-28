@@ -1,0 +1,115 @@
+<nav class="morvex-header text-white">
+  <div class="top-info-bar">
+    <div class="top-info-left">
+      <a href="#" class="social-pill"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="social-pill"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="social-pill"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-pill"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    
+    <div class="top-info-right">
+       <span>+91-7058492729</span>
+      <span>sales@morvexindia.com</span>
+    </div>
+  </div>
+
+<div class="main-nav container mx-auto px-4">
+
+  <div class="flex items-center justify-between h-20">
+
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-3">
+      <img
+        src="/assets/images/morvexLogo.PNG"
+        alt="MORVEX Logo"
+        class="h-12 w-auto"
+      />
+
+      <span class="brand-name">
+        MORVEX
+      </span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-8 text-base font-medium nav-links" [class.mobile-open]="menuOpen">
+
+      <li>
+        <a routerLink="/">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/about">
+          <i class="fas fa-info-circle"></i> About Us
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/product">
+          <i class="fas fa-box"></i> Products
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/contact">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Mobile Hamburger -->
+   <button
+    type="button"
+    class="hamburger-btn"
+    (click)="toggleMenu()">
+
+    <i class="fas" [class.fa-bars]="!menuOpen" [class.fa-times]="menuOpen"></i>
+
+  </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="menuOpen"
+    class="md:hidden bg-white shadow-lg rounded-lg mt-2 py-2">
+
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      class="block px-4 py-3 hover:bg-gray-100">
+      <i class="fas fa-home mr-2"></i>
+      Home
+    </a>
+
+    <a
+      routerLink="/about"
+      (click)="closeMenu()"
+      class="block px-4 py-3 hover:bg-gray-100">
+      <i class="fas fa-info-circle mr-2"></i>
+      About Us
+    </a>
+
+    <a
+      routerLink="/product"
+      (click)="closeMenu()"
+      class="block px-4 py-3 hover:bg-gray-100">
+      <i class="fas fa-box mr-2"></i>
+      Products
+    </a>
+
+    <a
+      routerLink="/contact"
+      (click)="closeMenu()"
+      class="block px-4 py-3 hover:bg-gray-100">
+      <i class="fas fa-envelope mr-2"></i>
+      Contact
+    </a>
+
+  </div>
+
+</div>
+</nav>

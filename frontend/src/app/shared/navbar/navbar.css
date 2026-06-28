@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+
+.morvex-header {
+  width: 100%;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.top-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.top-info-left,
+.top-info-center,
+.top-info-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.top-info-center span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.top-info-right {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.top-icon-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.icon {
+  display: inline-flex;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.3rem 0.45rem;
+}
+
+.icon-button:hover,
+.auth-links a:hover {
+  color: #facc15;
+}
+
+.auth-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.divider {
+  color: #94a3b8;
+  margin: 0 0.35rem;
+}
+
+.main-nav {
+  background: rgba(245, 245, 245, 1);
+}
+
+.logo-group {
+  align-items: center;
+}
+
+.brand-logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #1a365d;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links a:hover {
+  color: #facc15;
+}
+
+.menu-icon {
+  font-size: 1.1rem;
+}
+
+/* Hide hamburger on desktop */
+.hamburger-btn {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 28px;
+  color: #1a365d;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    z-index: 999;
+  }
+
+  .main-nav {
+    position: relative;
+  }
+
+  .main-nav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
